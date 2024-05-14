@@ -1,5 +1,9 @@
 import type { ConfigContext, ExpoConfig } from "expo/config";
 
+
+
+
+
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: "expo",
@@ -29,11 +33,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       backgroundColor: "#1F104A",
     },
   },
-  // extra: {
-  //   eas: {
-  //     projectId: "your-eas-project-id",
-  //   },
-  // },
+  extra: {
+    eas: {
+      projectId: "cfc4a313-0734-4236-ad86-651c73f10ea8",
+    },
+  },
   experiments: {
     tsconfigPaths: true,
     typedRoutes: true,
