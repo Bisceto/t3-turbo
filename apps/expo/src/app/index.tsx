@@ -103,6 +103,10 @@ export default function Index() {
     onSettled: () => utils.post.all.invalidate().then(),
   });
 
+  const deleteAllPostsMutation = api.post.deleteAll.useMutation({
+    onSettled: () => utils.post.all.invalidate().then(),
+  });
+
   return (
     <SafeAreaView className=" bg-background">
       {/* Changes page title visible on the header */}
@@ -121,7 +125,7 @@ export default function Index() {
 
         <View className="py-2">
           <Text className="font-semibold italic text-primary">
-            Press on a post
+            Press on a post NOW NOW NOW
           </Text>
         </View>
 
@@ -136,7 +140,12 @@ export default function Index() {
             />
           )}
         />
-
+        <Pressable
+          onPress={() => deleteAllPostsMutation.mutate()}
+          className="flex items-center rounded-lg bg-primary p-2"
+        >
+          <Text className="text-foreground"> Delete all posts</Text>
+        </Pressable>
         <CreatePost />
       </View>
     </SafeAreaView>
